@@ -14,4 +14,57 @@ public class TestCompute {
     c = new Compute(mq);
     assertTrue(true);
   }
+  
+
+  @Test
+  public void example1() {
+    MessageQueue mq = mock(MessageQueue.class);
+    
+    c = new Compute(mq);
+    when(mq.size()).thenReturn(0);
+
+    System.out.println(c.countNumberOfOccurrences("e"));
+		
+
+ 
+  }
+  @Test
+  public void example2() {
+    MessageQueue mq = mock(MessageQueue.class);
+    
+    c = new Compute(mq);
+    when(mq.size()).thenReturn(5);
+
+    System.out.println(c.countNumberOfOccurrences("e"));
+		
+
+ 
+  }
+    
+  
+  @Test
+  public void example3() {
+    MessageQueue mq = mock(MessageQueue.class);
+    
+    c = new Compute(mq);
+    when(mq.size()).thenReturn(5);
+    when(mq.contains("e")).thenReturn(true);
+
+    System.out.println(c.countNumberOfOccurrences("e"));
+		
+
+ 
+  }
+	@Test
+	public void example4() {
+		MessageQueue mq = mock(MessageQueue.class);
+
+		c = new Compute(mq);
+		when(mq.size()).thenReturn(5);
+		when(mq.contains("e")).thenReturn(true);
+		when(mq.getAt(1)).thenReturn("e");
+
+		System.out.println(c.countNumberOfOccurrences("e"));
+
+	}
 }
